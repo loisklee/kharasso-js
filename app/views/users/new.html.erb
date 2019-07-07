@@ -1,1 +1,14 @@
-sign up page!
+<h1>sign up</h1>
+
+  <%= form_for @user do |f| %>
+    <%= f.text_field :email, placeholder: "Email" %><br>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br>
+    <%= f.submit "start living intentionally" %>
+  <% end %>
+
+
+  <%= link_to "already have an account? [login here]", "/login" %> <br>
+
+  <%= link_to "connect with facebook [here]", '/auth/facebook' %><br>
+
