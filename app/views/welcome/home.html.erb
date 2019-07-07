@@ -1,6 +1,36 @@
-home page!
+<div class="homepage_header">
+  <p class="header_top">  
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 
-<%= link_to "sign up ", new_user_path %> <p>
-<%= link_to "login", '/login' %> <p>
-<%= link_to "practices", '/practices' %> <p>
+    <script>
+      var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        smartBackspace: true,
+        backSpeed: 20,
+        typeSpeed: 65,
+      });
+    </script>
 
+  <div id="typed-strings">
+    <p>to be kind</p>
+    <p>to be loving</p>
+    <p>to be wise</p>
+    <p>to be intellectually honest</p>
+    <p>to be merciful</p>
+    <p>to be someone with integrity</p>
+    <p>to be someone i admire</p>
+    <p>to be someone with good judgement</p>
+    <p>to be someone the younger me could look up to</p>
+    <p>to be fully human.</p>
+  </div>
+  <span id="typed"></span>
+  <br><br>
+
+  it's in the <em> ordinary</em> tasks && <em>small </em> gestures that we grow in character.
+
+<br><br><br><br><br><br><br><br>
+<%= link_to "// get started // ", new_user_path %> <p>
+<br><br>
+<%= link_to "[a look at what others are practicing]", practices_path %><br><br>
+
+</div>

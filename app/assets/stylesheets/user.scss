@@ -1,0 +1,61 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.week_size{
+    background-color: #a5ad9f;
+    text-align: center;
+  }
+  
+  .week-name {
+    text-decoration: none;
+    color: black;
+    font-size: 1.25em;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  
+  .div_card p {
+    margin: 10px 0 0 0;
+  }
+  
+  ul.week-destinations {
+    text-align: left;
+  }
+  
+  .edit-links a{
+    color: #000;
+    text-decoration: none;
+    text-align: right;
+    margin: 0 5px 5px 0;
+  }
+  
+  .edit-links {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+  }
+  
+  .inner-pic {
+    height: 20%;
+    overflow: hidden;
+  }
+  
+  .inner-pic img{
+    width: 100%;
+    height: auto;
+  }
+  
+  // COMPLETED TRIP
+  .completed-week p {
+    color: #B1B3B6;
+    text-decoration: line-through;
+  }
+  
+  
+  div.completed-week {
+    background-color: #D1D3D4;
+    
+  }
+  

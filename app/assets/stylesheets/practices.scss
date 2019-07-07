@@ -1,3 +1,108 @@
-// Place all the styles related to the Practices controller here.
+// Place all the styles related to the Destinations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+    font-weight: normal;
+    font-size: 80px;
+    position: relative;
+    top: 20px;
+    left: 2.75%;
+    color: rgb(104, 148, 167);
+    font-family: 'Bad Script', cursive;
+  }
+
+  h2{
+    color: #6D8A96;
+  }
+  
+  // SHOW PAGE STYLES
+  .header-box {
+    padding: 15px;
+    top: 50%;
+    font-size: 1.75em;
+    color: #1F252A;
+    background-color: #B49082;
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    font-family: 'East Sea Dokdo', cursive;
+
+  }
+  
+  #header-image {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300px;
+    text-align: center;
+  
+  }
+  
+  .show-wrapper {
+    position: absolute;
+    top: 325px;
+    margin: auto;
+  }
+  
+  // DESTINATION INFO
+  
+  .practice_name {
+    margin: auto;
+    padding: 5px;
+
+  }
+
+  .dest-info {
+    display: inline-block;
+    float:left;
+    width: 40%;
+  }
+  
+  .location {
+    font-size: 2em;
+  }
+  
+  .action-buttons a, .comment .action-buttons {
+    color: #fff;
+    text-decoration: none;
+    background-color: #929982;
+    padding: 3px 18px;
+    margin: 5px;
+    display: inline-block;
+    width: 200px;
+  }
+  
+  // COMMENTS
+  
+  .comments {
+    display: inline-block;
+    float:right;
+    width: 40%;
+  }
+  
+  .comment p{
+    background-color:#E6E7E8;
+    border: 20px solid #E6E7E8;
+    margin: 0;
+  }
+  
+  .comment-links {
+    text-decoration: none;
+    color: #B1B3B6;
+    text-align: right;
+    padding: 5px;
+    font-size: .75em;
+  }
+  
+  
+  
+  // INDIVIDUAL DIV STYLES -- INDEX
+  .week_size {
+    height: auto;
+    margin: 10px;
+  }
+  
+
+  

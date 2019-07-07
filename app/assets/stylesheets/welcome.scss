@@ -1,0 +1,41 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#home_body {
+    background-image: url(homepage.jpg);
+    background-size: cover;
+  }
+  
+  nav#home_nav {
+    background-image: none;
+  }
+  
+  div.homepage_header {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    }
+  
+  .header_top {
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .header_bottom {
+    text-align: center;
+    font-size: 4em;
+  }
+  
+  .homepage_header a {
+    color: white;
+    text-decoration: none;
+    background-color: #B49082;
+    padding: 3px 18px;
+    position: absolute;
+  }
+  
+  #everywhere {
+    font-weight: bold;
+  }
+  

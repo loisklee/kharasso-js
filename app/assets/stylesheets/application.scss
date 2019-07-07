@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ a {
+  color: #0F2036;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ body {
+  font-family: 'Dosis', sans-serif;
+  background-color: #F5F5F5;
+  }
+  
+  /* NAVIGATION */
+  
+  nav {
+   padding: 1% 0;
+   text-align: right;
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 1;
+  }
+  nav a {
+    text-decoration: none;
+    padding: 3px 10px;
+    color: #7A7D7D;
+  
+  }
+  
+  #logo-link a{
+   position: absolute;
+   left: 3%;
+   color: 7A8471;
+   padding: 2px 12px;
+  }
+  
+  
+  .button, input[type="submit" i]{
+   color: #fff;
+   text-decoration: none;
+   background-color: #B49082;
+   padding: 3px 18px;
+   position: absolute;
+  }
+  
+  .create_button{
+   right: 7.15%;
+   margin-bottom: 20px;
+  }
+  
+  /* FORM STYLES */
+  form{
+  
+   width: 500px;
+  }
+  
+  input, textarea, select {
+   width: 500px;
+   border: none;
+   height: 30px;
+   font-size: 1em;
+   padding: 5px;
+   margin: 5px;
+  }
+  
+  input[type="checkbox" i] {
+   display: inline-block;
+   width: 20px;
+   height: 15px;
+   margin: 10px;
+  }
+  
+  textarea {
+   height: 100px;
+  }
+  
+  input[type="submit" i] {
+   width: auto;
+  }
+  
+  span#typed {
+    font-size: 62px;
+    font-weight: 600;
+    color: #718e8e;
+    max-width: 500px;
+    font-family: 'Bad Script', cursive;
+
+  }
+  
+  .typed-cursor{
+    font-size: 62px;
+    font-weight: 200;
+  }
+  
+  /* MULTI-DIV COLLECTIONS */
+  .wrapper {
+   width: 80%;
+   margin: auto;
+  }
+  
+  .div_card {
+   padding: 10px;
+   margin: 10px;
+   background-color: #a5ad9f;
+   vertical-align: top;
+   position: relative;
+  }
+  
