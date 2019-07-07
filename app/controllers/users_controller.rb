@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     end
     
     def show
+        if logged_in?
+            @user = User.find_by(id: params[:id])
+            redirect_to user_path(current_user) if @user != current_user
+        else
+            require_login
+        end
     end
 
     private
