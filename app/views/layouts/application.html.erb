@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kharasso</title>
+    <title>kharasso</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
 
+    </head>
+  <header>
+  <nav>
+    <span id="logo-link"><%= link_to "home", root_path %></span>
+    <%= link_to "about", about_path %>
+    <%= link_to "practices", practices_path %>
+    <%= link_to "my practices", user_practices_path(@current_user) if @current_user %>
+    <%= link_to "my account", user_path(@current_user) if @current_user %>
+    <%= link_to "login", '/login' if !@current_user%>
+    <%= link_to "logout", '/logout' if @current_user %>
+
+  </nav>
+</header>
   <body>
     <%= yield %>
   </body>

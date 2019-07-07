@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   resources :plans
   resources :weeks
   resources :practices
-  resources :users
+
+  resources :users, only: [:new, :show, :create] do
+    resources :practices, only: [:index]
+  end
 
   root to: 'welcome#home'
   get '/about', to: 'welcome#about'
