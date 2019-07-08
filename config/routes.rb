@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create] do
     resources :practices, only: [:index]
+    resources :weeks, only: [:edit, :new]
   end
 
   root to: 'welcome#home'

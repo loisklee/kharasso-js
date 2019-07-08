@@ -1,0 +1,20 @@
+<% @user.weeks.each do |t| %>
+  <div class=" div_card <%= t.completed ? "completed-week " : "week_size"%> ">
+
+    <div class="inner-pic"></div>
+
+    <p class="week-name"><U>for the week of <%= t.start_date.strftime("%b %d, %Y")%>,</p><br></U>
+    <p> i am ...  </p>
+    <ul class="week-practices">
+      <% t.practices.each do |d| %>
+        <p> <%= d.name%>, because i want to better <%=d.category%></p>
+      <% end %>
+    </ul>
+<br>
+    <div class="edit-links">
+      <%= link_to " [edit] ", edit_user_week_path(@current_user, t) %>
+      <%= link_to " [delete] ", t, method: :delete %>
+    </div>
+
+  </div>
+<% end %>
