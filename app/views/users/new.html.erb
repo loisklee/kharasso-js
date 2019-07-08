@@ -1,4 +1,7 @@
-<h1>sign up</h1>
+<br><br>
+<center><h1>sign up</h1><br>
+
+<%= render partial: "error_messages", locals: {instance: @user} %>
 
   <%= form_for @user do |f| %>
     <%= f.text_field :email, placeholder: "Email" %><br>
@@ -6,9 +9,16 @@
     <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br>
     <%= f.submit "start living intentionally" %>
   <% end %>
+  <br><br>
 
-
+  <p> 
   <%= link_to "already have an account? [login here]", "/login" %> <br>
-
+  <p> 
   <%= link_to "connect with facebook [here]", '/auth/facebook' %><br>
+  <br><br>
+
+
+
+</center>
+
 
