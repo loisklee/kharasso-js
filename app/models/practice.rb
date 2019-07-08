@@ -5,4 +5,7 @@ class Practice < ApplicationRecord
     has_many :plans
     has_many :weeks, through: :plans
 
+    def self.categorize_by(category)
+        Practice.all.where(:category => category)
+    end
 end

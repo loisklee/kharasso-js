@@ -1,1 +1,26 @@
-practices index!
+<br><br>
+<center><h1>practices</h1></center>
+
+</div>
+
+<div class="wrapper">
+<%= link_to "New Practice", new_practice_path, class:"button create_button" %><br>
+<br>
+<div class="practice_size">
+
+<% @categorys.each do |c| %>
+  <p class="category tag <%= c.downcase %> ">i want to better <%= c %> by </p>
+
+    <ul>
+
+      <% @practices.categorize_by(c).each do |p| %>
+        <li>
+        <div class="div_card">
+        <div class="practice_name"> <%= link_to p.name, practice_path(p) %>
+        <br>
+        </li>
+      <% end %>
+    </ul>
+<% end %>
+</div>
+</div>
