@@ -1,0 +1,19 @@
+
+<div id="header-image">
+ <section class="header-box">more of ...<br> <%= @practice.name %>,    <%= render 'content' %>
+ </section><br>
+</div>
+<br><br><br><br><br><br><br><br>
+
+
+<center>
+<br><br><br><br><br><br>
+    <div class="action-buttons"><br><br><br>
+      <%= link_to "add to my week", new_practice_plan_path(@practice) %><br>
+      <% if @practice.creator == @current_user %>
+        <%= link_to "update this practice", edit_practice_path(@practice)%><br>
+        <%= link_to "delete this practice", @practice, method: :delete %>
+      <% end %>
+    </div>
+<center>
+</div>

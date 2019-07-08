@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :plans
   resources :weeks
-  resources :practices
+  resources :practices do
+    resources :plans, only: [:new]
+    resources :comments, only: [:new, :edit]
+  end
+  
   resources :sessions, only: [:create]
 
 

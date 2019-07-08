@@ -4,7 +4,7 @@
     <%= f.hidden_field :creator_id, value: @practice.creator.id  %>
     <%= f.text_field :name, placeholder: "Practice Name" %><br>
     <%= f.text_area :description, placeholder: "Description" %><br>
-    <%= f.select :category, @categorys, :include_blank => "because i want to better ... (select one below)" %>
+    <%= f.select :category, @categorys = ["live", "love myself", "love my family, friends and neighbours", "love my enemies", "care for creation and our common home"], :include_blank => "because i want to better ... (select one below)" %>
 
     <%= f.submit %>
   <% end %>

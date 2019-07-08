@@ -18,4 +18,8 @@ class ApplicationController < ActionController::Base
     def set_week
       @week = Week.find_by(id: params[:id])
     end
+
+    def set_practice
+      @practice = Practice.find_by(id: params[:id])
+    end
 end
