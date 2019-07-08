@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  resources :plans
-  resources :weeks
+  resources :sessions, only: [:create]
+  resources :plans, only: [:create, :destroy]
+  resources :weeks, only: [:create, :update, :destroy]
+
   resources :practices do
     resources :plans, only: [:new]
     resources :comments, only: [:new, :edit]
   end
-  
-  resources :sessions, only: [:create]
-
 
   resources :users, only: [:new, :show, :create] do
     resources :practices, only: [:index]
@@ -19,5 +18,6 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new', :as => :login
   get '/logout', to: 'sessions#destroy'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/auth/facebook/callback' => 'sessions#create'
+
 end

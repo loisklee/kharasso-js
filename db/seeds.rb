@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+test = User.create!(password: "test", password_confirmation: "test", email: "self@test.com")
+lois = User.create!(password: "test", password_confirmation: "test", email: "lois@test.com")
+
+Practice.create(name: "spending time on things that contribute to my well-being and growth", category: "love myself", creator_id:1)
+Practice.create(name: "taking care of my body", category: "love myself",creator_id:1)
+Practice.create(name: "managing my finances", category: "love myself",creator_id:2)
+Practice.create(name: "upholding my promise to myself to not to engage in self-defeating behavior", category: "love myself",creator_id:1)
+Practice.create(name:'active listening', category: "love my family, friends and neighbours",creator_id:1)
+Practice.create(name: "offering to pick up the chores", category: "love my family, friends and neighbours",creator_id:1)
+Practice.create(name: "not spending time unintentionally and mindlessly on social media", category: "love myself",creator_id:1)
+Practice.create(name: "reducing my meat intake", category: "care for creation and our common home",creator_id:1)
+Practice.create(name: "increasing intake on more veggies and legumes", category: "care for creation and our common home",creator_id:1)
+Practice.create(name: "reducing waste and plastic usage by bringing own container and silverware / chopsticks", category: "care for creation and our common home",creator_id:1)
