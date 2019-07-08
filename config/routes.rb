@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :plans
   resources :weeks
   resources :practices
+  resources :sessions, only: [:create]
+
 
   resources :users, only: [:new, :show, :create] do
     resources :practices, only: [:index]
