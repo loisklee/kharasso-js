@@ -6,7 +6,7 @@
 <div class="wrapper">
   <%= form_for @plan do |f| %>
     <%= f.hidden_field :practice_id %>
-    <%= f.collection_select :week_id, @current_user.weeks, :id, :start_date, {:prompt => 'Select current week'} %>
+    <%= f.collection_select :week_id, @current_user.weeks, :id, :start_date, {:prompt => 'select current week or add to a new one below'} %>
 
     <%=f.fields_for :week, @plan.build_week do |t| %>
       <%= t.hidden_field :user_id, value: @current_user.id %>
