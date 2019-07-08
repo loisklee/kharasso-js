@@ -1,0 +1,19 @@
+<br><br>
+<br><br>
+<center>
+<h2>remind yourself of this practice by adding it to a week</h2>
+
+<div class="wrapper">
+  <%= form_for @plan do |f| %>
+    <%= f.hidden_field :practice_id %>
+    <%= f.collection_select :week_id, @current_user.weeks, :id, :start_date, {:prompt => 'Select current week'} %>
+
+    <%=f.fields_for :week, @plan.build_week do |t| %>
+      <%= t.hidden_field :user_id, value: @current_user.id %>
+      <%= t.date_field :start_date, placeholder: "Or create a new one." %><br>
+    <% end %>
+
+    <%= f.submit "add #{@plan.practice.name}"%>
+  <% end %>
+</div>
+</center>
