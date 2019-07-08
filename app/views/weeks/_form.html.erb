@@ -8,6 +8,7 @@
       Practices: <br>
       <%= f.collection_check_boxes :practice_ids, @week.practices, :id, :name %><br><br>
     <% end %>
+    <%= f.check_box :completed, {}, 1, 0 %>week completed?<br>
 
     <%= f.submit %>
   <% end %>
