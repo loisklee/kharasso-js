@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <%= form_for @week do |f| %>
+    <%= f.hidden_field :user_id, value: @week.user.id %>
+    week start date:
+    <%= f.date_field :start_date %><br>
+
+    <% if !@week.practices.empty? %>
+      Practices: <br>
+      <%= f.collection_check_boxes :practice_ids, @week.practices, :id, :name %><br><br>
+    <% end %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
