@@ -1,0 +1,10 @@
+<br>
+
+<%= form_for @practice do |f| %>
+    <%= f.hidden_field :creator_id, value: @practice.creator.id  %>
+    <%= f.text_field :name, placeholder: "Practice Name" %><br>
+    <%= f.text_area :description, placeholder: "Description" %><br>
+    <%= f.select :category, @categorys, :include_blank => "because i want to better ... (select one below)" %>
+
+    <%= f.submit %>
+  <% end %>
