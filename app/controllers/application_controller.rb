@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     def verify(instance)
       instance.user == current_user
     end
+
+    def set_week
+      @week = Week.find_by(id: params[:id])
+    end
 end
