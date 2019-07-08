@@ -2,15 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body#home_body {
-    background-image: url(homepage.jpg);
-    background-size: cover;
-  }
-  
-  nav#home_nav {
-    background-image: none;
-  }
-  
+.wrapper-home{
+  width: 50%;
+  margin: auto;
+
+ }
+ 
   div.homepage_header {
     position: absolute;
     top: 20%;
