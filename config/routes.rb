@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :show, :create] do
     resources :practices, only: [:index]
-    resources :weeks, only: [:edit, :new]
+    resources :weeks, only: [:edit, :new, :past]
   end
 
   root to: 'welcome#home'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new', :as => :login
   get '/logout', to: 'sessions#destroy'
 
-  get '/users/:user_id/past_weeks', to: 'weeks#past'
+  get '/users/:user_id/past_weeks', to: 'weeks#past', :as => :past_weeks
 
   get '/auth/facebook/callback' => 'sessions#create'
 

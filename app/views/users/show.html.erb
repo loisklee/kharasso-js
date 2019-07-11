@@ -5,7 +5,9 @@
 <br>
 
 <div class="wrapper">
-  <%= link_to "start new week", new_user_week_path(@user), class:"button create_button" %>
+  <%= link_to "start new week", new_user_week_path(@user), class:"button create_button" %><br><br>
+  <%= link_to "past weeks", past_weeks_path(@user), class:"button create_button" %>
+
   <br><br>
   <%= render 'content' %>
 
