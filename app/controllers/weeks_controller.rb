@@ -34,7 +34,10 @@ class WeeksController < ApplicationController
     @week.destroy
     redirect_to user_path(current_user)
   end
-
+  
+  def past
+    @weeks = Week.past.where(user_id: current_user.id)
+  end
   private
   
   def week_params

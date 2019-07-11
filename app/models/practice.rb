@@ -7,7 +7,6 @@ class Practice < ApplicationRecord
     validates :name, presence: true, uniqueness:{case_sensitive: false}
     validates :category, presence: {:message => 'cannot be blank, practice cannot be saved.'}
 
-    def self.categorize_by(category)
-        Practice.all.where(:category => category)
-    end
+    scope :categorize_by, -> (c){ where(category: c)}
+
 end

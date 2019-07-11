@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new', :as => :login
   get '/logout', to: 'sessions#destroy'
 
+  get '/users/:user_id/past_weeks', to: 'weeks#past'
+
   get '/auth/facebook/callback' => 'sessions#create'
 
 end

@@ -3,4 +3,9 @@ class Week < ApplicationRecord
 
     has_many :plans
     has_many :practices, through: :plans
+
+    scope :past, -> { where(completed: true)}
+
+    #show all of user's weeks that are completed
+
 end

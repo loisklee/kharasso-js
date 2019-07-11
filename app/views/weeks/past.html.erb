@@ -1,0 +1,26 @@
+<br><br>
+
+<center>
+
+<h1>past weeks</h1>
+
+    <div class="wrapper">
+
+    <% @weeks.each do |t| %>
+        <div class=" div_card <%= t.completed ? "completed-week " : "week_size"%> ">
+    
+        <div class="inner-pic"></div>
+        <p class="week-name"><U>for the week of <%= t.start_date.strftime("%b %d, %Y")%>,</p><br></U>
+
+        <p> i practiced ...  </p>
+        
+        <ul class="week-practices">
+            <% t.practices.each do |d| %>
+                <p> <%= d.name%>, because i wanted to better <%=d.category%></p>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+    </div>
+
+</center>
