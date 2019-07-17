@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tips
   resources :sessions, only: [:create]
   resources :plans, only: [:create, :destroy]
   resources :weeks, only: [:create, :update, :destroy]
