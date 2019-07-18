@@ -53,7 +53,7 @@ class PracticesController < ApplicationController
 
   private
   def practice_params
-   params.require(:practice).permit(:name, :category, :creator_id)
+   params.require(:practice).permit(:name, :description, :category, :creator_id)
   end
 
 end

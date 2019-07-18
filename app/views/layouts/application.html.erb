@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>kharasso</title>
+    <title>kharassō</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,7 +14,7 @@
     </head>
   <header>
   <nav>
-    <span id="logo-link"><%= link_to "home", root_path %></span>
+    <span id="logo-link"><%= link_to "kharassō", root_path %></span>
     <%= link_to "about", about_path %>
     <%= link_to "practices", practices_path %>
     <%= link_to "my practices", user_practices_path(@current_user) if @current_user %>

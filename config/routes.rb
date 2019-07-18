@@ -13,7 +13,7 @@ end
   resources :practices do
     resources :plans, only: [:new]
     resources :comments, only: [:new, :edit]
-    resources :tips, only: [:new, :edit]
+    resources :tips, only: [:new, :edit, :destroy]
   end
 
   resources :users, only: [:new, :show, :create] do

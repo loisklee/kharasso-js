@@ -36,6 +36,9 @@ class TipsController < ApplicationController
     end
   
     def destroy
+      @tip = Tip.find_by(id: params[:id])
+      @tip.destroy
+      redirect_to practice_path(@tip.practice)    
     end
   
     def like

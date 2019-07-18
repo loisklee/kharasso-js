@@ -23,7 +23,7 @@ h1 {
     font-size: 1.75em;
     color: #1F252A;
     background-color: #B49082;
-    width: 50%;
+    width: 90%;
     position: relative;
     display: inline-block;
     font-family: 'East Sea Dokdo', cursive;
@@ -48,16 +48,35 @@ h1 {
   
   // PRACTICE INFO
   
+  .help{
+    position: absolute;
+    bottom: 10px;
+    right: 30%;
+    margin: auto;
+  }
+
   .practice_name {
     margin: auto;
     padding: 5px;
 
   }
 
-  .practoice-info {
+  .container{
+    width: 90%;
+    min-height: 350px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .practice-info {
+
     display: inline-block;
-    float:left;
-    width: 40%;
+    float: left;
+    width: 45%;
+    background-color: lightgrey; 
+    padding: 1em;
+    position: relative;
   }
   
   .location {
@@ -72,20 +91,27 @@ h1 {
     margin: 5px;
     display: inline-block;
     width: 200px;
+    position: relative;
+    bottom: 0;
   }
   
   // TIPS
   
   .tips {
+    padding: 1em;
     display: inline-block;
-    float:center;
-    width: 40%;
+    width: 45%;
+    margin-left: 5%;
+    background-color: lightgrey; 
+    position: relative;
   }
   
   .tip p{
     background-color:#E6E7E8;
     border: 20px solid #E6E7E8;
-    margin: 0;
+    text-align: left;
+    margin: 7%;
+
   }
   
   .tip-links {
