@@ -1,11 +1,12 @@
 <br><br>
 <center>
-<h1>my weeks</h1><br>
+<h1><%= @current_user.name %>'s weeks</h1><br>
 <br><br>
 <br>
 
 <div class="wrapper">
-  <%= link_to "start new week", new_user_week_path(@user), class:"button create_button" %><br><br>
+  <%= link_to "start new week", new_user_week_path(@user), class:"button create_button" %>
+  <br><br>
   <%= link_to "past weeks", past_weeks_path(@user), class:"button create_button" %>
 
   <br><br>

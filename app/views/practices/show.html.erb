@@ -1,19 +1,43 @@
-
+<center>
 <div id="header-image">
  <section class="header-box">more of ...<br> <%= @practice.name %>,    <%= render 'content' %>
- </section><br>
+ </section>
+ <br>
 </div>
-<br><br><br><br><br><br><br><br>
 
-
-<center>
 <br><br><br><br><br><br>
-    <div class="action-buttons"><br><br><br>
-      <%= link_to "add to my week", new_practice_plan_path(@practice) %><br>
-      <% if @practice.creator == @current_user %>
-        <%= link_to "update this practice", edit_practice_path(@practice)%><br>
-        <%= link_to "delete this practice", @practice, method: :delete %>
+<br><br><br><br><br><br>
+
+  <div class="action-buttons"><br><br><br>
+    <%= link_to "add to my week", new_practice_plan_path(@practice) %><br>
+    <% if @practice.creator == @current_user %>
+      <%= link_to "update this practice", edit_practice_path(@practice)%><br>
+      <%= link_to "delete this practice", @practice, method: :delete %>
+    <% end %>
+  </div>
+
+
+<br><br>
+
+<section class="tips">
+    <br><br>
+    <p>[thoughts, tips & suggestions]</p>
+    <div class="tip-div">
+      <% @practice.tips.top_tip.each do |c| %>
+        <div class="tip">
+          <p>
+            <%= c.user.name.capitalize %> says:<br><br>
+            <%= c.content %><br><br>
+            <%= c.likes %>
+            <%= link_to "edit", edit_practice_tip_path(@practice, c), class: "tip-links" if c.user == @current_user %>
+            <%= link_to "like", like_tip_path(c), class: "tip-links", method: :post %>
+          </p>
+        </div><br>
       <% end %>
+  
+
+    <%= link_to "contribute your tip", new_practice_tip_path(@practice), class:"leave-comment" %><br><br>
     </div>
-<center>
-</div>
+  </section>
+
+</center>

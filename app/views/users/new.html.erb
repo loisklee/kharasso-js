@@ -4,6 +4,7 @@
 <%= render partial: "error_messages", locals: {instance: @user} %>
 
   <%= form_for @user do |f| %>
+    <%= f.text_field :name, placeholder: "First Name" %><br>
     <%= f.text_field :email, placeholder: "Email" %><br>
     <%= f.password_field :password, placeholder: "Password" %><br>
     <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %><br>

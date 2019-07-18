@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   resources :plans, only: [:create, :destroy]
   resources :weeks, only: [:create, :update, :destroy]
 
+  resources :tips, only: [:create, :update] do
+    member do
+    post 'like'
+  end
+end
+
   resources :practices do
     resources :plans, only: [:new]
     resources :comments, only: [:new, :edit]
+    resources :tips, only: [:new, :edit]
   end
 
   resources :users, only: [:new, :show, :create] do

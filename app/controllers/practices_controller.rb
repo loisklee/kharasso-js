@@ -42,6 +42,8 @@ class PracticesController < ApplicationController
   end
 
   def show
+    current_user
+    @practice = Practice.find_by(id: params[:id])
   end
 
   def destroy

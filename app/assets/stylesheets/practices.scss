@@ -46,7 +46,7 @@ h1 {
     margin: auto;
   }
   
-  // DESTINATION INFO
+  // PRACTICE INFO
   
   .practice_name {
     margin: auto;
@@ -54,7 +54,7 @@ h1 {
 
   }
 
-  .dest-info {
+  .practoice-info {
     display: inline-block;
     float:left;
     width: 40%;
@@ -64,7 +64,7 @@ h1 {
     font-size: 2em;
   }
   
-  .action-buttons a, .comment .action-buttons {
+  .action-buttons a{
     color: #fff;
     text-decoration: none;
     background-color: #929982;
@@ -74,21 +74,21 @@ h1 {
     width: 200px;
   }
   
-  // COMMENTS
+  // TIPS
   
-  .comments {
+  .tips {
     display: inline-block;
-    float:right;
+    float:center;
     width: 40%;
   }
   
-  .comment p{
+  .tip p{
     background-color:#E6E7E8;
     border: 20px solid #E6E7E8;
     margin: 0;
   }
   
-  .comment-links {
+  .tip-links {
     text-decoration: none;
     color: #B1B3B6;
     text-align: right;

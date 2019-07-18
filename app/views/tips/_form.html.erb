@@ -1,0 +1,6 @@
+<%= form_for @tip do |f| %>
+    <%= f.hidden_field :user_id, value: @current_user.id %>
+    <%= f.hidden_field :practice_id, value: @practice.id %>
+    <%= f.text_area :content, placeholder: "contribute your tip / suggestion / thoughts here. start with 'i find that ...' or 'what helps me is ...'" %>
+    <%= f.submit "post tip" %>
+  <% end %>
