@@ -1,47 +1,52 @@
 <center>
-<div id="header-image">
- <section class="header-box">more of ...<br> <%= @practice.name %>, <br> because i want to better <%= @practice.category %>
- </section>
-
+<div id="header-image" >
+<section id='practice-name' class="header-box">more of ... <%= @practice.name %>,</section>
+<section id='practice-category' class="header-box">because i want to better <%= @practice.category %>.</section>
 </div>
 
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
 <br><br>
-
-<div class = "container">
+<!-- Content -->
+<div class = "wrapper ">
   <section class="practice-info">
     <%= render 'content' %>
-    <div class = 'help'>
-        <%= link_to "add to my week", new_practice_plan_path(@practice), class:"leave-comment"%><p>
-        <% if @practice.creator == @current_user%>
-          <p>
-          <%= link_to "update this practice", edit_practice_path(@practice), class:"leave-comment"%>
-          <p>
-          <%= link_to "delete this practice", @practice, method: :delete , class:"leave-comment"%>
-        <% end %>
+    <div class="action-buttons">
+    <%= link_to "add to my week", new_practice_plan_path(@practice), id:'add' %><br>
+    <%= link_to "update this practice", edit_practice_path(@practice), id:'update'%><br>
+    <%= link_to "delete this practice", @practice, method: :delete, id:'delete' %>
+
     </div>
   </section>
 
+  <!-- Thoughts / Tips -->
   <section class="tips">
-  <h3>[thoughts, tips & suggestions]</h3>
+  <br><br>
+  <!-- next/previous buttons -->
+  <section class="next-previous">
+    <%= link_to "previous practice", "#", :"data-practiceId" => @practice.id, id: "previous-button", class:"button"%>
+    <%= link_to "next practice", "#", data:{"practiceId" => @practice.id, "last-practice" => @last.id }, id: "next-button", class:"button"%>
+  <section>
+  <br><br>
 
-    <% @practice.tips.top_tip.each do |c| %>
-      <div class="tip">
-        <p>
-          <%= c.user.name.capitalize %> shared:<br><br>
-          <%= c.content %><br><br>
-          <%= c.likes %>
-          <%= link_to "like", like_tip_path(c), class: "tip-links", method: :post %>
+  <section>
+      <p><h3>[thoughts, tips & suggestions]</h3></p>
+      <div class="tip-div">
+          <%= render 'tips' %>
+      </div><br>
 
-          <%= link_to "edit", edit_practice_tip_path(@practice, c), class: "tip-links" if c.user == @current_user %>
-          <%= link_to "delete", c, method: :delete, class: "tip-links" if c.user == @current_user %>
-        </p>
+      <!-- button to show tips form -->
+      <%= link_to "leave a suggestion", "#", class:"button show-form" %>
+      <div id="tip-form">
+        <form>
+          <%= link_to "Post tip", "#", class:"button submit-tip", :'data-practice_id' => @practice.id, :'data-user_id' => @current_user.id  %>
+          <br><br>
+
+          <textarea class="tip-textarea" placeholder="write your message here"></textarea>
+        </form>
       </div>
-    <% end %>
-    <br> 
-    <div class="help">
-      <%= link_to "contribute your tip", new_practice_tip_path(@practice), class:"leave-comment" %>
-    </div>
-  </section>
-</div>
+    </section>
+
+
+
+
