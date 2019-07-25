@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     def set_practice
       @practice = Practice.find_by(id: params[:id])
     end
+
+    def set_tip
+      @tip = Tip.find_by(id: params[:id])
+    end
 end
