@@ -1,0 +1,18 @@
+{{#each object}}
+  <div class=" div_card {{#if completed}} completed-week {{else}} week_size{{/if}}">
+
+    <p class="week-name">{{start_date}}</p><br>
+
+    <ul class="week-practices">
+       {{#each practices}}
+        <p> {{name}}</p>
+      {{/each}}
+    </ul>
+
+    <div class="edit-links">
+      <a href="/users/{{user_id}}/weeks/{{id}}/edit">edit</a>
+      <a href="/users/{{user_id}}/weeks/{{id}}" data-method="delete">delete</a>
+    </div>
+
+  </div>
+{{/each}}

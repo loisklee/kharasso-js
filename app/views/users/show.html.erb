@@ -1,16 +1,18 @@
 <br><br>
 <center>
-<h1><%= @current_user.name %>'s weeks</h1><br>
-<br><br>
-<br>
+
+<h1 id='user-show-header'><%= @current_user.name.capitalize %>'s weeks <br></h1>
+
 
 <div class="wrapper">
-  <%= link_to "start new week", new_user_week_path(@user), class:"button create_button" %>
-  <br><br>
-  <%= link_to "past weeks", past_weeks_path(@user), class:"button create_button" %>
-
-  <br><br>
-  <%= render 'content' %>
-
+  <br>
+  <div id="user-buttons">
+    <%= link_to "start a new week", new_user_week_path(@current_user), class:"button create_button" %>
   </div>
+  <br>
+  <br>
+  <div id="user-content">
+    <%= render "content" %>
+  </div>
+</div>
 </center>
