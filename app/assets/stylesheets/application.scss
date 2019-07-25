@@ -64,22 +64,24 @@
    text-decoration: none;
    background-color: #B49082;
    padding: 3px 18px;
-   position: absolute;
+   position: relative;
+   width: 145px;
+   text-align: center;
   }
   
   .create_button{
-   right: 7.15%;
-   margin-bottom: 20px;
+   right: 11.15%;
+   position: absolute;
   }
   
   /* FORM STYLES */
   form{
   
-   width: 500px;
+   width: 450px;
   }
   
   input, textarea, select {
-   width: 500px;
+   width: 450px;
    border: none;
    height: 30px;
    font-size: 1em;

@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-  // Tip class
+  // tip class
   class Tip{
     constructor(data){
       this.id = data.id
