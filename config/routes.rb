@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tips, only: [:create, :update] do
     member do
     post 'like'
+    post 'unlike'
   end
 end
 
@@ -17,7 +18,7 @@ end
   end
 
   resources :users, only: [:new, :show, :create] do
-    resources :practices, only: [:index]
+    resources :practices, only: [:index, :show]
     resources :weeks, only: [:edit, :new, :past]
   end
 

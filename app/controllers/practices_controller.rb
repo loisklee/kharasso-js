@@ -11,9 +11,11 @@ class PracticesController < ApplicationController
     else
      @practices = Practice.all
     end
-    render :layout => "application"
+    respond_to do |format|
+      format.html {render :layout => "application"}
+      format.json {render json: @practices}
+    end
   end
-
 
   def new
     @categorys = ["live", "love myself", "love my family, friends and neighbours", "love my enemies", "care for creation and our common home"]
@@ -25,7 +27,8 @@ class PracticesController < ApplicationController
   def create
     @practice = Practice.new(practice_params)
     if @practice.save
-     redirect_to practice_path(@practice)
+      @practice.creator = current_user
+      redirect_to practice_path(@practice)
     else
      render 'new'
     end
@@ -42,8 +45,11 @@ class PracticesController < ApplicationController
   end
 
   def show
-    current_user
-    @practice = Practice.find_by(id: params[:id])
+    @last = Practice.last
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @practice}
+    end
   end
 
   def destroy
