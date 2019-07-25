@@ -1,6 +1,6 @@
 class PracticesController < ApplicationController
   before_action :require_login, :current_user, :set_practice
-  skip_before_action :require_login, :only => [:index, :show]
+  skip_before_action :require_login, :only => [:index]
   skip_before_action :set_practice, :only => [:index, :new, :create]
 
 

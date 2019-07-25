@@ -44,9 +44,9 @@ $( document ).ready(function() {
     const updatePage = (practiceId) =>{
       let current_user_id = parseInt($('#user').attr("data-user_id"))
       $.get(`/practices/${practiceId}.json`, (practice) =>{
-        hideElements()
         updatePracticeContent(practice)
         updateButtonLinks(practiceId)
+        hideElements()
         $('.show-form').show()
         updateTips(practice)
       })
