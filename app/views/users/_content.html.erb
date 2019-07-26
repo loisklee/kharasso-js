@@ -1,8 +1,6 @@
 <% @user.weeks.each do |t| %>
   <div class=" div_card <%= t.completed ? "completed-week " : "week_size"%> ">
 
-    <div class="inner-pic"></div>
-
     <p class="week-name"><U>for the week of <%= t.start_date.strftime("%b %d, %Y")%>,</p><br></U>
     <p> i am ...  </p>
     <ul class="week-practices">

@@ -1,7 +1,7 @@
 <% @practice.tips.top_tip.each do |c| %>
     <div class="tip">
       <p>
-      <span class="tip-name"><%= c.user.name.capitalize %> says:</span><br><br> 
+      <span class="tip-name"><%= c.user.name.capitalize %> shared:</span><br><br> 
       <span class="tip-content"><%= c.content %></span><br><br>
         <span class="tip-likes" id="tip-<%= c.id %>-likes"><%= c.likes %></span>
         <%= link_to "like", "#", data: {"id"=> c.id, "likes"=> c.likes, "practice" => c.practice_id}, class: "tip-links like-button", id:"like-button-#{c.id}" %>
