@@ -10,6 +10,13 @@ $( document ).ready(function() {
     }
     hideElements()
   
+    const conditionalButtons = (creatorId = null) => {
+      let creator = creatorId || parseInt($('#user').attr("data-creator_id"))
+      let user = parseInt($('#user').attr("data-user_id"))
+      let $conditionals = $('#conditional-buttons')
+      user !== creator ? $conditionals.hide() : $conditionals.show()
+    }
+    conditionalButtons()
   
    // content updaters
     const updateButtonLinks = (practiceId) => {
@@ -25,7 +32,6 @@ $( document ).ready(function() {
       $('#practice-name').text('more of ... ' + practice.name + ',')
       $('#practice-category').text('because i want to better ' + practice.category + '.')
       $('#description').text(practice.description)
-  
   }
   
   const sortTips = (practice) => {
@@ -48,6 +54,7 @@ $( document ).ready(function() {
         updateButtonLinks(practiceId)
         hideElements()
         $('.show-form').show()
+        conditionalButtons(practice.creator_id)
         updateTips(practice)
       })
     }

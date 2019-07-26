@@ -1,4 +1,5 @@
 <br>
+<div class="wrapper">
 
 <%= form_for @practice do |f| %>
     <%= f.hidden_field :creator_id, value: @practice.creator.id  %>
@@ -8,3 +9,4 @@
 
     <%= f.submit %>
   <% end %>
+  </div>

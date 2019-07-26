@@ -7,6 +7,8 @@
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
 <br><br>
+<div id="user" data-user_id="<%=@current_user.id%>" data-creator_id="<%=@practice.creator_id%>"/>
+
 <!-- Content -->
 <div class = "wrapper ">
   <section class="practice-info">
@@ -14,7 +16,9 @@
     <div class="action-buttons">
     <%= link_to "add to my week", new_practice_plan_path(@practice), id:'add' %><br>
     <%= link_to "update this practice", edit_practice_path(@practice), id:'update'%><br>
-    <%= link_to "delete this practice", @practice, method: :delete, id:'delete' %>
+    <div id="conditional-buttons">
+      <%= link_to "delete this practice", @practice, method: :delete, id:'delete' %>
+    </div>
 
     </div>
   </section>
