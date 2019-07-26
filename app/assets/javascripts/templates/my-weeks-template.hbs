@@ -1,11 +1,11 @@
 {{#each object}}
   <div class=" div_card {{#if completed}} completed-week {{else}} week_size{{/if}}">
 
-    <p class="week-name">{{start_date}}</p><br>
-
+    <p class="week-name"><u>for the week of {{start_date}},</p></u><br><br>
+    i am ... 
     <ul class="week-practices">
        {{#each practices}}
-        <p> {{name}}</p>
+        <p> {{name}}, because i want to better {{category}}.</p>
       {{/each}}
     </ul>
 
