@@ -18,8 +18,8 @@ end
   end
 
   resources :users, only: [:new, :show, :create] do
-    resources :practices, only: [:index, :show]
-    resources :weeks, only: [:edit, :new, :past]
+    resources :practices, only: [:index, :show, :new]
+    resources :weeks, only: [:edit, :new, :past, :destroy]
   end
 
   root to: 'welcome#home'
