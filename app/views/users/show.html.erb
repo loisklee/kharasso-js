@@ -1,13 +1,12 @@
 <br><br>
 <center>
-
-<h1 id='user-show-header'><%= @current_user.name.capitalize %>'s weeks <br></h1>
-
-
+<h1 id='user-show-header'>my weeks</h1><br>
+</center>
 <div class="wrapper">
   <br>
   <div id="user-buttons">
-    <%= link_to "start a new week", new_user_week_path(@current_user), class:"button create_button" %>
+    <%= link_to "my practices", "#", class:"button my-practices",  :'data-id'=> @current_user.id %>
+    <%= link_to "new week", new_user_week_path(@current_user), class:"button create_button" %>
   </div>
   <br>
   <br>
@@ -15,4 +14,3 @@
     <%= render "content" %>
   </div>
 </div>
-</center>
