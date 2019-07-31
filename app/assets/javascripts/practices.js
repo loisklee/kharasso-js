@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+
   // SHOW PAGE
     // initial page set up
     const hideElements = () => {
@@ -79,4 +80,49 @@ $( document ).ready(function() {
       $('#tip-form').slideDown('slow')
     })
   })
-  
+
+
+  const clearDom = () => {
+    $('#app-container').html('');
+  }
+
+  // INDEX PAGE
+  $(() =>  {
+    bindClickHandlers()
+  })
+
+  const bindClickHandlers = () => {
+    $('.all_practices').on('click', (e) => {
+      e.preventDefault()
+      history.pushState(null, null, "practices")
+      fetch(`/practices.json`)
+        .then(res => res.json())
+        .then(practices => {
+          $('#app-container').html('')
+          practices.forEach(practice => {
+            let newPractice = new Practice(practice)
+            let practiceHtml = newPractice.formatIndex()
+           console.log(practiceHtml)
+            $('#app-container').append(practiceHtml)
+          })
+        })
+      })
+  }
+
+  function Practice(practice){
+    this.id = practice.id
+    this.name = practice.name
+    this.description = practice.description
+  }
+
+  Practice.prototype.formatIndex = function(){
+    console.log(this)
+    let practiceHtml = `
+    <div class="div_card">
+
+      <a href="/practices/${this.id}"<h4>${this.name}</h4><br>
+      </div>
+    `
+
+    return practiceHtml
+  }
