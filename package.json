@@ -1,5 +1,7 @@
 {
   "name": "kharasso",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "ember-truth-helpers": "^2.1.0"
+  }
 }

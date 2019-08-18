@@ -1,5 +1,15 @@
-{{#each object}}
-  <div class="practice_size div_card {{random_class}}">
-    <div class="practice_name"><a href="/practices/{{id}}">{{name}}</a></div><br>
-  </div>
+<center><h1>list of practices</h1></center>
+<div class="wrapper">
+
+<br>
+{{#each this.object as |p|}}
+  <ul>i want to better {{p.category}} by 
+ {{!-- {{#ifEquals this.object.category "live"}}--}}
+
+    <li>
+    <div class="div_card"><a href="/practices/{{p.id}}">{{p.name}}</a></div><br>
+    </li> 
+  </ul>
+  {{!--  {{/ifEquals}}--}}
 {{/each}}
+</div>

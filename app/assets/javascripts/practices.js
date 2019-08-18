@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
   // SHOW PAGE
     // initial page set up
     const hideElements = () => {
@@ -79,17 +78,12 @@ $( document ).ready(function() {
       $('.show-form').hide()
       $('#tip-form').slideDown('slow')
     })
-  })
-
-
-  const clearDom = () => {
-    $('#app-container').html('');
-  }
 
   // INDEX PAGE
   $(() =>  {
     bindClickHandlers()
   })
+
 
   const bindClickHandlers = () => {
     $('.all_practices').on('click', (e) => {
@@ -101,10 +95,10 @@ $( document ).ready(function() {
           $('#app-container').html('')
           practices.forEach(practice => {
             let newPractice = new Practice(practice)
-            let practiceHtml = newPractice.formatIndex()
-           console.log(practiceHtml)
-            $('#app-container').append(practiceHtml)
-          })
+            let practiceHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
+            $('#app-container').html(practiceHtml)
+          }, 'json')
+          
         })
       })
   }
@@ -115,14 +109,23 @@ $( document ).ready(function() {
     this.description = practice.description
   }
 
-  Practice.prototype.formatIndex = function(){
-    console.log(this)
-    let practiceHtml = `
-    <div class="div_card">
-
-      <a href="/practices/${this.id}"<h4>${this.name}</h4><br>
-      </div>
-    `
-
-    return practiceHtml
+  const sortPage = () =>{
+    $.get('/practices', (practices) =>{
+      practices.sort(function(a, b){
+        let name1 = a.name.toUpperCase()
+        let name2 = b.name.toUpperCase()
+        if(name1 < name2) { return -1; }
+        if(name1 > name2) { return 1; }
+        return 0;
+      })
+      $('#app-container').html('')
+    let contentHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
+    $('.practice-container').html(contentHtml)
+    }, 'json')
   }
+  
+  $("#sort").on('click', (e) => { //project review code
+    sortPage()
+  })
+
+})

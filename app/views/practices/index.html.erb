@@ -4,24 +4,29 @@
 </div>
 
 <div class="wrapper">
-<%= link_to "add a practice", new_practice_path, class:"button create_button" %><br>
+<%= link_to "add a practice", new_practice_path, class:"button create_button" %> <br> <br>
+<button id="sort"> Sort Practices </button>
+
 <br>
+<section class="practice-container">
+
 <div class="practice_size">
 
 <% @categorys.each do |c| %>
-  <p class="category tag <%= c.downcase %> ">i want to better <%= c %> by </p>
+  <p>i want to better <%= c %> by </p>
 
     <ul>
 
       <% @practices.categorize_by(c).each do |p| %>
         <li>
         <div class="div_card">
-        <div class="practice_name"> <%= link_to p.name, practice_path(p) %>
+        <%= link_to p.name, practice_path(p) %>
         <br>
         </li>
       <% end %>
     </ul>
 <% end %>
+</section>
 </div>
 </div>
 <br>
