@@ -94,7 +94,7 @@ $( document ).ready(function() {
         .then(practices => {
           $('#app-container').html('')
           practices.forEach(practice => {
-            let newPractice = new Practice(practice)
+            //let newPractice = new Practice(practice)
             let practiceHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
             $('#app-container').html(practiceHtml)
           }, 'json')
@@ -102,13 +102,13 @@ $( document ).ready(function() {
         })
       })
   }
-
+/*
   function Practice(practice){
     this.id = practice.id
     this.name = practice.name
     this.description = practice.description
   }
-
+*/
   const sortPage = () =>{
     $.get('/practices', (practices) =>{
       practices.sort(function(a, b){
