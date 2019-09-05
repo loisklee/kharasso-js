@@ -94,7 +94,6 @@ $( document ).ready(function() {
         .then(practices => {
           $('#app-container').html('')
           practices.forEach(practice => {
-            //let newPractice = new Practice(practice)
             let practiceHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
             $('#app-container').html(practiceHtml)
           }, 'json')
@@ -102,30 +101,6 @@ $( document ).ready(function() {
         })
       })
   }
-/*
-  function Practice(practice){
-    this.id = practice.id
-    this.name = practice.name
-    this.description = practice.description
-  }
-*/
-  const sortPage = () =>{
-    $.get('/practices', (practices) =>{
-      practices.sort(function(a, b){
-        let name1 = a.name.toUpperCase()
-        let name2 = b.name.toUpperCase()
-        if(name1 < name2) { return -1; }
-        if(name1 > name2) { return 1; }
-        return 0;
-      })
-      $('#app-container').html('')
-    let contentHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
-    $('.practice-container').html(contentHtml)
-    }, 'json')
-  }
-  
-  $("#sort").on('click', (e) => { //project review code
-    sortPage()
-  })
+
 
 })

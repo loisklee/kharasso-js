@@ -2,6 +2,7 @@
   "name": "kharasso",
   "private": true,
   "dependencies": {
-    "ember-truth-helpers": "^2.1.0"
+    "ember-truth-helpers": "^2.1.0",
+    "shufflejs": "^5.2.3"
   }
 }
