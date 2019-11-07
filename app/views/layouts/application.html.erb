@@ -16,7 +16,7 @@
   <nav>
     <span id="logo-link"><%= link_to "kharassō", root_path %></span>
     <%= link_to "about", about_path %>
-    <%= link_to "practices", practices_path, class: "all_practices" %>
+    <%= link_to "practices", practices_path%>
     <%= link_to "my account", user_path(@current_user) if @current_user %>
     <%= link_to "login", '/login' if !@current_user%>
     <%= link_to "logout", '/logout' if @current_user %>

@@ -78,29 +78,5 @@ $( document ).ready(function() {
       $('.show-form').hide()
       $('#tip-form').slideDown('slow')
     })
-
-  // INDEX PAGE
-  $(() =>  {
-    bindClickHandlers()
   })
-
-
-  const bindClickHandlers = () => {
-    $('.all_practices').on('click', (e) => {
-      e.preventDefault()
-      history.pushState(null, null, "practices")
-      fetch(`/practices.json`)
-        .then(res => res.json())
-        .then(practices => {
-          $('#app-container').html('')
-          practices.forEach(practice => {
-            let practiceHtml = HandlebarsTemplates[`my-practices-template`]({object: practices})
-            $('#app-container').html(practiceHtml)
-          }, 'json')
-          
-        })
-      })
-  }
-
-
-})
+  
