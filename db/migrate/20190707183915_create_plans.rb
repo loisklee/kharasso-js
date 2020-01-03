@@ -3,9 +3,6 @@ class CreatePlans < ActiveRecord::Migration[5.2]
     create_table :plans do |t|
       t.integer :week_id
       t.integer :practice_id
-      t.datetime :created_at
-      t.datetime :updated_at
-
       t.timestamps
     end
   end
