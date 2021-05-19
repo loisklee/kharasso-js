@@ -147,7 +147,9 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.2)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
@@ -175,7 +177,8 @@ GEM
     pg (1.2.1)
     popper_js (1.14.5)
     public_suffix (4.0.2)
-    puma (3.12.2)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.8)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -292,7 +295,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails
   rails-ujs
   sass-rails (~> 5.0)
